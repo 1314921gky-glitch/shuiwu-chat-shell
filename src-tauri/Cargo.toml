@@ -1,0 +1,28 @@
+[package]
+name = "shuiwu-chat-shell"
+version = "1.0.0"
+description = "水务AI聊天生图壳"
+authors = ["shuiwu"]
+edition = "2021"
+rust-version = "1.88"
+
+[lib]
+name = "shuiwu_chat_shell_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset"] }
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4"] }
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true

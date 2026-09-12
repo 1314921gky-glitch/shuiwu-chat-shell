@@ -6,6 +6,9 @@ dev-workstation/
 .shuiwu-tmp/
 *.log
 .DS_Store
+Thumbs.db
 .vite/
 coverage/
+scripts/.shots/
+scripts/.e2e-workstation/
 .cargo/

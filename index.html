@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>水务AI · 聊天生图</title>
+    <script>
+      (function () {
+        var pref = "system";
+        try {
+          pref = localStorage.getItem("shuiwu-theme") || "system";
+        } catch (e) {}
+        if (pref !== "light" && pref !== "dark" && pref !== "system") pref = "system";
+        var resolved = pref;
+        if (pref === "system") {
+          resolved = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", resolved);
+        document.documentElement.setAttribute("data-theme-pref", pref);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
