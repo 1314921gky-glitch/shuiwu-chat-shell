@@ -1,0 +1,11 @@
+node_modules/
+dist/
+src-tauri/target/
+dev-workstation/
+.shuiwu-dev-settings.json
+.shuiwu-tmp/
+*.log
+.DS_Store
+.vite/
+coverage/
+.cargo/
